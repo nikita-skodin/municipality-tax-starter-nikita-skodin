@@ -7,9 +7,14 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class MunicipalityTaxToFullTaxInfoConverter
-    implements Converter<MunicipalityTax, FullTaxInfo> {
-  @Override
-  public FullTaxInfo convert(MunicipalityTax source) {
-    throw new UnsupportedOperationException();
-  }
+        implements Converter<MunicipalityTax, FullTaxInfo> {
+    @Override
+    public FullTaxInfo convert(MunicipalityTax source) {
+        return new FullTaxInfo(
+                source.id(),
+                source.municipality(),
+                source.tax(),
+                source.startDate(),
+                source.taxSchedule().toString());
+    }
 }

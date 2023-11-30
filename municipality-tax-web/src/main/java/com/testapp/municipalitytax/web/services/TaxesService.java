@@ -1,4 +1,4 @@
-package com.testapp.municipalitytax.web;
+package com.testapp.municipalitytax.web.services;
 
 import com.testapp.municipalitytax.web.payload.*;
 import java.util.UUID;

@@ -1,4 +1,4 @@
-CREATE TABLE IF NOT EXISTS taxes (
+CREATE TABLE taxes (
     id UUID default random_uuid(),
     municipality VARCHAR(50) not null,
     tax DOUBLE PRECISION not null,

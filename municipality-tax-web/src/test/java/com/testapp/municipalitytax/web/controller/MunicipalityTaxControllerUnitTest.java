@@ -4,7 +4,7 @@ import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 import static org.mockito.MockitoAnnotations.openMocks;
 
-import com.testapp.municipalitytax.web.TaxesService;
+import com.testapp.municipalitytax.web.services.TaxesService;
 import com.testapp.municipalitytax.web.payload.AddTaxRequest;
 import com.testapp.municipalitytax.web.payload.UpdateTaxRequest;
 import java.time.LocalDate;
@@ -12,12 +12,15 @@ import java.util.UUID;
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mock;
+import org.springframework.validation.BindException;
+import org.springframework.validation.BindingResult;
 
 public class MunicipalityTaxControllerUnitTest {
 
   private MunicipalityTaxController municipalityTaxController;
 
   @Mock private TaxesService taxesService;
+  @Mock private BindingResult bindingResult;
 
   @Before
   public void setUp() {
@@ -32,7 +35,7 @@ public class MunicipalityTaxControllerUnitTest {
         new AddTaxRequest("Municipality", 1D, LocalDate.now().toString(), "YEARLY");
 
     // when
-    municipalityTaxController.addMunicipalityTax(addTaxRequest);
+    municipalityTaxController.addMunicipalityTax(addTaxRequest, bindingResult);
 
     // then
     verify(taxesService, times(1)).addTax(addTaxRequest);
@@ -46,7 +49,7 @@ public class MunicipalityTaxControllerUnitTest {
         new UpdateTaxRequest(1D, LocalDate.now().toString(), "YEARLY");
 
     // when
-    municipalityTaxController.updateMunicipalityTax(id, updateTaxRequest);
+    municipalityTaxController.updateMunicipalityTax(id, updateTaxRequest, bindingResult);
 
     // then
     verify(taxesService, times(1)).updateTax(id, updateTaxRequest);
