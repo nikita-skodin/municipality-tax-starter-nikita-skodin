@@ -3,6 +3,8 @@ package com.testapp.municipalitytax.web.controller;
 import com.testapp.municipalitytax.web.payload.AddTaxRequest;
 import com.testapp.municipalitytax.web.payload.UpdateTaxRequest;
 import com.testapp.municipalitytax.web.services.TaxesService;
+import com.testapp.municipalitytax.web.validators.AddTaxRequestValidator;
+import com.testapp.municipalitytax.web.validators.UpdateTaxRequestValidator;
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mock;
@@ -21,13 +23,19 @@ public class MunicipalityTaxControllerUnitTest {
 
     @Mock
     private TaxesService taxesService;
+
+    @Mock
+    private AddTaxRequestValidator addTaxRequestValidator;
+
+    @Mock
+    protected UpdateTaxRequestValidator updateTaxRequestValidator;
     @Mock
     private BindingResult bindingResult;
 
     @Before
     public void setUp() {
         openMocks(this);
-        municipalityTaxController = new MunicipalityTaxController(taxesService);
+        municipalityTaxController = new MunicipalityTaxController(taxesService, addTaxRequestValidator, updateTaxRequestValidator);
     }
 
     @Test
