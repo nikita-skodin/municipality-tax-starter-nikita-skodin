@@ -1,1 +1,127 @@
-{"collection":{"info":{"_postman_id":"d36c8bdc-c3ef-4876-a302-92689f28d3c3","name":"Municipality Tax","schema":"https://schema.getpostman.com/json/collection/v2.1.0/collection.json","updatedAt":"2023-11-16T18:18:36.000Z","uid":"3739273-d36c8bdc-c3ef-4876-a302-92689f28d3c3"},"item":[{"name":"add new tax","id":"2fbb8bed-a52c-468d-9b2c-e16e9e3470f2","protocolProfileBehavior":{"disableBodyPruning":true},"request":{"method":"POST","header":[],"body":{"mode":"raw","raw":"{\r\n    \"municipality\": \"Municipality\",\r\n    \"tax\": 0.1,\r\n    \"startDate\": \"2022.01.01\",\r\n    \"schedule\": \"yearly\"\r\n}","options":{"raw":{"language":"json"}}},"url":{"raw":"localhost:8080/taxes","host":["localhost"],"port":"8080","path":["taxes"]}},"response":[],"uid":"3739273-2fbb8bed-a52c-468d-9b2c-e16e9e3470f2"},{"name":"update tax","id":"66b0cf4b-a66f-439f-b000-368b411cc246","protocolProfileBehavior":{"disableBodyPruning":true},"request":{"method":"PUT","header":[],"body":{"mode":"raw","raw":"{\r\n    \"tax\": 0.2,\r\n    \"startDate\": \"2022.01.01\",\r\n    \"schedule\": \"yearly\"\r\n}","options":{"raw":{"language":"json"}}},"url":{"raw":"localhost:8080/taxes/3cd80eeb-4d14-4f85-8bff-33c90f11a9ad","host":["localhost"],"port":"8080","path":["taxes","3cd80eeb-4d14-4f85-8bff-33c90f11a9ad"]}},"response":[],"uid":"3739273-66b0cf4b-a66f-439f-b000-368b411cc246"},{"name":"find tax by municipality and date","id":"6096a085-b908-404e-9371-e747f4381ea9","protocolProfileBehavior":{"disableBodyPruning":true},"request":{"method":"GET","header":[],"url":{"raw":"localhost:8080/taxes/Municipality/2022.01.01","host":["localhost"],"port":"8080","path":["taxes","Municipality","2022.01.01"]}},"response":[],"uid":"3739273-6096a085-b908-404e-9371-e747f4381ea9"},{"name":"get all taxes","id":"49eb7ade-d160-4afc-a46b-f2499bacf211","protocolProfileBehavior":{"disableBodyPruning":true},"request":{"method":"GET","header":[],"url":{"raw":"localhost:8080/taxes/all","host":["localhost"],"port":"8080","path":["taxes","all"]}},"response":[],"uid":"3739273-49eb7ade-d160-4afc-a46b-f2499bacf211"}]}}
+{
+  "collection": {
+    "info": {
+      "_postman_id": "d36c8bdc-c3ef-4876-a302-92689f28d3c3",
+      "name": "Municipality Tax",
+      "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+      "updatedAt": "2023-11-16T18:18:36.000Z",
+      "uid": "3739273-d36c8bdc-c3ef-4876-a302-92689f28d3c3"
+    },
+    "item": [
+      {
+        "name": "add new tax",
+        "id": "2fbb8bed-a52c-468d-9b2c-e16e9e3470f2",
+        "protocolProfileBehavior": {
+          "disableBodyPruning": true
+        },
+        "request": {
+          "method": "POST",
+          "header": [],
+          "body": {
+            "mode": "raw",
+            "raw": "{\r\n    \"municipality\": \"Municipality\",\r\n    \"tax\": 0.1,\r\n    \"startDate\": \"2022.01.01\",\r\n    \"schedule\": \"yearly\"\r\n}",
+            "options": {
+              "raw": {
+                "language": "json"
+              }
+            }
+          },
+          "url": {
+            "raw": "localhost:8080/taxes",
+            "host": [
+              "localhost"
+            ],
+            "port": "8080",
+            "path": [
+              "taxes"
+            ]
+          }
+        },
+        "response": [],
+        "uid": "3739273-2fbb8bed-a52c-468d-9b2c-e16e9e3470f2"
+      },
+      {
+        "name": "update tax",
+        "id": "66b0cf4b-a66f-439f-b000-368b411cc246",
+        "protocolProfileBehavior": {
+          "disableBodyPruning": true
+        },
+        "request": {
+          "method": "PUT",
+          "header": [],
+          "body": {
+            "mode": "raw",
+            "raw": "{\r\n    \"tax\": 0.2,\r\n    \"startDate\": \"2022.01.01\",\r\n    \"schedule\": \"yearly\"\r\n}",
+            "options": {
+              "raw": {
+                "language": "json"
+              }
+            }
+          },
+          "url": {
+            "raw": "localhost:8080/taxes/3cd80eeb-4d14-4f85-8bff-33c90f11a9ad",
+            "host": [
+              "localhost"
+            ],
+            "port": "8080",
+            "path": [
+              "taxes",
+              "3cd80eeb-4d14-4f85-8bff-33c90f11a9ad"
+            ]
+          }
+        },
+        "response": [],
+        "uid": "3739273-66b0cf4b-a66f-439f-b000-368b411cc246"
+      },
+      {
+        "name": "find tax by municipality and date",
+        "id": "6096a085-b908-404e-9371-e747f4381ea9",
+        "protocolProfileBehavior": {
+          "disableBodyPruning": true
+        },
+        "request": {
+          "method": "GET",
+          "header": [],
+          "url": {
+            "raw": "localhost:8080/taxes/Municipality/2022.01.01",
+            "host": [
+              "localhost"
+            ],
+            "port": "8080",
+            "path": [
+              "taxes",
+              "Municipality",
+              "2022.01.01"
+            ]
+          }
+        },
+        "response": [],
+        "uid": "3739273-6096a085-b908-404e-9371-e747f4381ea9"
+      },
+      {
+        "name": "get all taxes",
+        "id": "49eb7ade-d160-4afc-a46b-f2499bacf211",
+        "protocolProfileBehavior": {
+          "disableBodyPruning": true
+        },
+        "request": {
+          "method": "GET",
+          "header": [],
+          "url": {
+            "raw": "localhost:8080/taxes/all",
+            "host": [
+              "localhost"
+            ],
+            "port": "8080",
+            "path": [
+              "taxes",
+              "all"
+            ]
+          }
+        },
+        "response": [],
+        "uid": "3739273-49eb7ade-d160-4afc-a46b-f2499bacf211"
+      }
+    ]
+  }
+}

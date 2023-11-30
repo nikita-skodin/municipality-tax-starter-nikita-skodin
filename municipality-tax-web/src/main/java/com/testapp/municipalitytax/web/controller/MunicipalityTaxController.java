@@ -1,19 +1,14 @@
 package com.testapp.municipalitytax.web.controller;
 
-import com.testapp.municipalitytax.web.Dto.ErrorDTO;
 import com.testapp.municipalitytax.web.payload.*;
 import com.testapp.municipalitytax.web.services.TaxesService;
 import com.testapp.municipalitytax.web.validators.AddTaxRequestValidator;
 import com.testapp.municipalitytax.web.validators.UpdateTaxRequestValidator;
-import jakarta.validation.ConstraintViolation;
-import jakarta.validation.ConstraintViolationException;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Set;
 import java.util.UUID;
 
 @RestController

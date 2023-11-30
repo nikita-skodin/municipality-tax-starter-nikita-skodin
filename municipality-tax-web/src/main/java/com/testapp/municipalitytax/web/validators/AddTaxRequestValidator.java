@@ -1,9 +1,9 @@
 package com.testapp.municipalitytax.web.validators;
 
 import com.testapp.municipalitytax.web.payload.AddTaxRequest;
+import org.springframework.stereotype.Component;
 import org.springframework.validation.Errors;
 import org.springframework.validation.Validator;
-import org.springframework.stereotype.Component;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -25,13 +25,13 @@ public class AddTaxRequestValidator implements Validator {
 
         AddTaxRequest target1 = (AddTaxRequest) target;
 
-        if (target1.municipality().isBlank()){
+        if (target1.municipality().isBlank()) {
             errors.rejectValue("municipality", "400",
                     "name can not be blank");
         }
 
         Matcher matcher = datePattern.matcher(target1.startDate());
-        if (!matcher.matches()){
+        if (!matcher.matches()) {
             errors.rejectValue("startDate", "400",
                     "startDate is invalid");
         }

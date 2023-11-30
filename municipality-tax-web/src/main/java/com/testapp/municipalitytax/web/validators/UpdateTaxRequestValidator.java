@@ -26,7 +26,7 @@ public class UpdateTaxRequestValidator implements Validator {
 
 
         Matcher matcher = datePattern.matcher(target1.startDate());
-        if (!matcher.matches()){
+        if (!matcher.matches()) {
             errors.rejectValue("startDate", "400",
                     "startDate is invalid");
         }
